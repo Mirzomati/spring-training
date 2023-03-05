@@ -11,6 +11,8 @@
         <option value="$PROJECT_DIR$/spring-05-Core-Abstraction/pom.xml" />
         <option value="$PROJECT_DIR$/spring-01-Core-IoC-Bean-Annotation/pom.xml" />
         <option value="$PROJECT_DIR$/spring-02-Core-IoC-Stereotype-Annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-007-SpringBoott-Demo/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-07-SpringBoot-demoPractice/pom.xml" />
       </list>
     </option>
   </component>
