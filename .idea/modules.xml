@@ -11,7 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/spring-05-Core-Abstraction/spring-05-Core-Abstraction.iml" filepath="$PROJECT_DIR$/spring-05-Core-Abstraction/spring-05-Core-Abstraction.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-06-Core-BeanScope/spring-06-Core-BeanScope.iml" filepath="$PROJECT_DIR$/spring-06-Core-BeanScope/spring-06-Core-BeanScope.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-07-SpringBoot-Demo/spring-07-SpringBoot-Demo.iml" filepath="$PROJECT_DIR$/spring-07-SpringBoot-Demo/spring-07-SpringBoot-Demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring-07-SpringBoot-demoPractice/spring-07-SpringBoot-demoPractice.iml" filepath="$PROJECT_DIR$/spring-07-SpringBoot-demoPractice/spring-07-SpringBoot-demoPractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-08-MVC-Controller/spring-08-MVC-Controller.iml" filepath="$PROJECT_DIR$/spring-08-MVC-Controller/spring-08-MVC-Controller.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/spring-training.iml" filepath="$PROJECT_DIR$/.idea/spring-training.iml" />
     </modules>
   </component>
