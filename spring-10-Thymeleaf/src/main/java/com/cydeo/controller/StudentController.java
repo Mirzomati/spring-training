@@ -18,9 +18,9 @@ public class StudentController {
     }
 
     @RequestMapping("/welcome")
-    public String welcome(@RequestParam String name, Model model){
+    public String welcome(){
 
-        model.addAttribute("name", name);
+
         return "student/welcome";
     }
 
