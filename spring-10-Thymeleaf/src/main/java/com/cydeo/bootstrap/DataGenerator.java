@@ -1,14 +1,16 @@
 package com.cydeo.bootstrap;
 
+import com.cydeo.model.Employee;
 import com.cydeo.model.Student;
 import com.github.javafaker.Faker;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class DataGenerator {
 
-
+    public static ArrayList<Employee> employees = new ArrayList<>();
     public static List<Student> createStudent(){
      List<Student> students = Arrays.asList(
              new Student(new Faker().name().firstName(), new Faker().name().lastName(), new Faker().number().numberBetween(20, 50), new Faker().address().state() ),
@@ -17,6 +19,10 @@ public class DataGenerator {
              new Student(new Faker().name().firstName(), new Faker().name().lastName(), new Faker().number().numberBetween(20, 50), new Faker().address().state() )
              );
      return students;
+    }
+
+    public static void addEmp(Employee employee){
+        employees.add(0,employee);
     }
 
 }

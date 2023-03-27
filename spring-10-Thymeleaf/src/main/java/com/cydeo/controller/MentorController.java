@@ -4,8 +4,11 @@ import com.cydeo.model.Mentor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.websocket.server.PathParam;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -25,4 +28,20 @@ public class MentorController {
 
         return "mentor/mentor-register";
     }
+
+    @PostMapping("/confirm")
+    public String submitForm(@ModelAttribute("mentor") Mentor mentor, Model model){
+
+
+
+     //   return "mentor/mentor-confirmation";
+
+        model.addAttribute("mentor", new Mentor());
+
+//        return "mentor/mentor-register";
+        return "redirect:/mentor/register";
+    }
+
+
+
 }
