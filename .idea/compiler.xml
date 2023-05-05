@@ -23,6 +23,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="CinemaLab" target="11" />
       <module name="spring-00-Coupling" target="11" />
       <module name="spring-007-SpringBoott-Demo" target="19" />
       <module name="spring-01-Core-IoC-Bean-Annotation" target="11" />
@@ -41,6 +42,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="CinemaLab" options="-parameters" />
       <module name="spring-007-SpringBoott-Demo" options="-parameters" />
       <module name="spring-07-SpringBoot-Demo" options="-parameters" />
       <module name="spring-07-SpringBoot-demoPractice" options="-parameters" />

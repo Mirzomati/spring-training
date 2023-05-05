@@ -3,8 +3,7 @@ package com.cydeo.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Value;
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
+
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -22,6 +21,9 @@ public class PaymentDetail {
 
     private BigDecimal commissionAmount;
     private BigDecimal merchantPayoutAmount;
+
+    @OneToOne(mappedBy = "paymentDetail")
+    private Payment payment;
 
     @Column(columnDefinition = "DATE")
     private LocalDate payoutDate;

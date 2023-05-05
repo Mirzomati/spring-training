@@ -1,13 +1,13 @@
-package com.cydeo.spring12datarelationship;
+package com.cydeo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DataRelationshipApplication {
+public class CinemaLabApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DataRelationshipApplication.class, args);
+        SpringApplication.run(CinemaLabApplication.class, args);
     }
 
 }
