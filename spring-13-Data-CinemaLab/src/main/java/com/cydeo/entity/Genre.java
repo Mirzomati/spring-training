@@ -10,19 +10,13 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
-public class Genre {
+public class Genre extends BaseEntity {
 
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     private String name;
 
-    @ManyToMany(mappedBy = "generesId")
-    private List<Movie> moviesId;
+    @ManyToMany
+    private List<Movie> movieList;
 
-    public Genre(String name) {
-        this.name = name;
-    }
+
 }

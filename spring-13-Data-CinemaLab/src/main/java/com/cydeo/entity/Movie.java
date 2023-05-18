@@ -33,16 +33,11 @@ public class Movie extends BaseEntity{
     @Column(columnDefinition = "text")
     private String summary;
 
-    @ManyToMany(mappedBy = "moviesId")
-    private List<Genre> genresId;
+    @ManyToMany
+    @JoinTable(name = "movie_genre_rel",
+    joinColumns = @JoinColumn(name = " movie_id"),
+    inverseJoinColumns = @JoinColumn(name = "genre_id"))
+    private List<Genre> genreList;
 
-    public Movie(String name, BigDecimal price, MovieType type, MovieState state, LocalDate releaseDate, BigDecimal duration, String summary) {
-        this.name = name;
-        this.price = price;
-        this.type = type;
-        this.state = state;
-        this.releaseDate = releaseDate;
-        this.duration = duration;
-        this.summary = summary;
-    }
+
 }
