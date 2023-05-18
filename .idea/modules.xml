@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-13-Data-CinemaLab/CinemaLab.iml" filepath="$PROJECT_DIR$/spring-13-Data-CinemaLab/CinemaLab.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-00-Coupling/spring-00-Coupling.iml" filepath="$PROJECT_DIR$/spring-00-Coupling/spring-00-Coupling.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-007-SpringBoott-Demo/spring-007-SpringBoott-Demo.iml" filepath="$PROJECT_DIR$/spring-007-SpringBoott-Demo/spring-007-SpringBoott-Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-01-Core-IoC-Bean-Annotation/spring-01-Core-IoC-Bean-Annotation.iml" filepath="$PROJECT_DIR$/spring-01-Core-IoC-Bean-Annotation/spring-01-Core-IoC-Bean-Annotation.iml" />

@@ -1,4 +1,4 @@
-package com.cydeo.Entity;
+package com.cydeo.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +21,7 @@ public class MovieCinema {
 
     @ManyToOne
     private Movie movieId;
+
 
     public MovieCinema(LocalDate dateTime) {
         this.dateTime = dateTime;

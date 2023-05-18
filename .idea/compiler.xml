@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-10-Thymeleaf" />
+        <module name="CinemaLab" />
         <module name="spring-03-Wiring" />
         <module name="spring-00-Coupling" />
         <module name="spring-01-Core-IoC-Bean-Annotation" />
