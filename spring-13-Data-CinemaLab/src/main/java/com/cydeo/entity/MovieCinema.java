@@ -9,18 +9,16 @@ import java.time.LocalDate;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "movieCinemas")
-public class MovieCinema {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@Table(name = "movie_cinema")
+public class MovieCinema extends BaseEntity {
 
     @Column(columnDefinition = "DATE", name = "date_time")
     private LocalDate dateTime;
 
-    @ManyToOne
-    private Movie movieId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Movie movie;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private  Cinema cinema;
 
 
     public MovieCinema(LocalDate dateTime) {
