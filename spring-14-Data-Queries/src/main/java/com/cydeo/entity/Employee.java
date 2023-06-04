@@ -12,7 +12,8 @@ import java.time.LocalDate;
 @Entity
 @Data
 @NoArgsConstructor
-public class Employees extends BaseEntity {
+@Table(name = "employees")
+public class Employee extends BaseEntity {
 
     private String firstName;
     private String lastName;

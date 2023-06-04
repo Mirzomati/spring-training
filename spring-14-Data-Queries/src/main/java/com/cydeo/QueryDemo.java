@@ -1,5 +1,7 @@
 package com.cydeo;
 
+import com.cydeo.repository.DepartmentRepository;
+import com.cydeo.repository.EmployeeRepository;
 import com.cydeo.repository.RegionRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -8,13 +10,39 @@ import org.springframework.stereotype.Component;
 public class QueryDemo implements CommandLineRunner {
 
     private final RegionRepository regionRepository;
+    private final DepartmentRepository departmentRepository;
+    private final EmployeeRepository employeeRepository;
 
-    public QueryDemo(RegionRepository regionRepository) {
+    public QueryDemo(RegionRepository regionRepository, DepartmentRepository departmentRepository, EmployeeRepository employeeRepository) {
         this.regionRepository = regionRepository;
+        this.departmentRepository = departmentRepository;
+        this.employeeRepository = employeeRepository;
     }
 
     @Override
     public void run(String... args) throws Exception {
+
+        System.out.println("_____________________REGION_______________");
+
         System.out.println("findByCountry:" + regionRepository.findByCountry("Canada"));
+
+        System.out.println("find By country name that contains 'United': " + regionRepository.findByCountryContains("United"));
+        System.out.println("findBy Country Contains OrderByRegion RegionDesc'United': " + regionRepository.findByCountryContainsOrderByRegion("United"));
+
+        System.out.println("find top  region by country 'United States : " + regionRepository.findTopByCountry("United States"));
+        System.out.println("find top 2 regions by country 'United States : " + regionRepository.findTop2ByCountry("United States"));
+        System.out.println("findTopByCountryContainsOrderByRegion : " + regionRepository.findTopByCountryContainsOrderByRegion("United States"));
+
+        System.out.println("_____________________DEPARTMENT_______________");
+
+        System.out.println("Find all the deparments in the Furniture Department: " + departmentRepository.findByDepartment("Furniture"));
+        System.out.println("Find all the deparments in the Health Division: " + departmentRepository.findByDivision("Health"));
+        System.out.println("findByDivisionEndsWith:" + departmentRepository.findByDivisionEndsWith("ics"));
+        System.out.println("findDistinctTop3ByDivisionContains:" + departmentRepository.findDistinctTop3ByDivisionContains("Hea"));
+
+        System.out.println("_____________________Employees_______________");
+
+        System.out.println("retrieveEmployeeDetail " + employeeRepository.retrieveEmployeeDetail());
+
     }
 }
