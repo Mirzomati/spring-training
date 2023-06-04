@@ -4,6 +4,7 @@ import com.cydeo.entity.Employee;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -43,6 +44,58 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     @Query("SELECT employee FROM Employee employee WHERE employee.email='amcnee1@google.es' ")
     Employee retrieveEmployeeDetail();
 
-//    @Query("SELECT e.salary ")
-//    Integer retrieveEmployeeSalary();
+    @Query("SELECT e.salary FROM Employee e WHERE e.email='amcnee1@google.es'")
+    Integer retrieveEmployeeSalary();
+
+
+    //Not Equal
+    @Query("SELECT employee FROM Employee  employee WHERE employee.salary <> ?1")
+    List<Employee> retrieveEmployeeSalaryNotEqual(int salary);
+
+    //Like / Contains / Starts-with / Ends-with
+    @Query("SELECT e FROM Employee e WHERE e.firstName = ?1 ")
+    List<Employee> retrieveEmployeeFirstNameLike(String pattern);
+
+    //Less Than
+    @Query("SELECT e FROM Employee e WHERE e.salary < ?1")
+    List<Employee> retrieveEmployeeSalaryLessThan(int salary);
+
+    //Greater Than
+    @Query("SELECT e FROM Employee e WHERE e.salary > ?1")
+    List<String> retrieveEmployeeSalaryGreaterThan(int salary);
+
+    //BETWEEN
+    @Query("SELECT e FROM Employee e WHERE e.salary BETWEEN ?1 and ?2")
+    List<Employee> retrieveEmployeeSalaryBetween(int salary1,int salary2);
+
+
+    //BEFORE
+    @Query("SELECT e FROM Employee e WHERE e.hireDate > ?1 ")
+    List<Employee> retrieveEmployeeHireDateBefore(LocalDate date);
+
+    //NULL
+    @Query("SELECT e FROM Employee e WHERE e.email IS NULL ")
+    List<Employee> retrieveEmployeeEmailIsNull();
+
+    //NOT NULL
+    @Query("SELECT e FROM Employee e WHERE e.email IS NOT NULL ")
+    List<Employee> retrieveEmployeeEmailIsNotNull();
+
+    //SORTING in Asc Order
+    @Query("SELECT e.salary FROM Employee e ORDER BY e.salary ASC ")
+    List<Employee> retrieveEmployeeSalaryOrderAsc();
+
+    //SORTING in Desc Order
+    @Query("SELECT e.salary FROM Employee e ORDER BY e.salary DESC ")
+    List<Employee> retrieveEmployeeSalaryOrderDesc();
+
+    //Native Query
+    @Query(value = "SELECT * FROM employees WHERE employees.salary = ?1", nativeQuery = true)
+    List<Employee> retrieveEmployeeDetailBySalary(int salary);
+
+    //Named Parameter
+    @Query("SELECT e FROM Employee  e WHERE e.salary = :salary")
+    List<Employee> retrieveEmployeeSalary(@Param("salary") int salary);
+
+
 }
